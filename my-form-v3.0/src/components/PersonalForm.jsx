@@ -4,6 +4,14 @@ import { changeCity, changeComplement, changeCpf, changeEmail, changeName, chang
 
 class PersonalForm extends Component {
   render() {
+    const {
+      changeName,
+      changeCpf,
+      changeEmail,
+      changeAdress,
+      changeCity,
+      changeDistrict,
+    } = this.props;
     return (
       <div className="personal-form">
         <fieldset className="field-control">
@@ -16,6 +24,7 @@ class PersonalForm extends Component {
               placeholder="Insira seu nome"
               maxLength="40"
               required
+              onChange={ (event) => changeName(event.target.value) }
             />
           </label>
           <label htmlFor="email">
@@ -27,6 +36,7 @@ class PersonalForm extends Component {
               placeholder="Insira seu email"
               maxLength="50"
               required
+              onChange={ (event) => changeEmail(event.target.value) }
             />
           </label>
           <label htmlFor="cpf">
@@ -38,6 +48,7 @@ class PersonalForm extends Component {
               placeholder="Insira seu CPF"
               maxLength="11"
               required
+              onChange={ (event) => changeCpf(event.target.value) }
             />
           </label>
           <label htmlFor="adress">
@@ -49,6 +60,7 @@ class PersonalForm extends Component {
               placeholder="Insira seu Endereço"
               maxLength="200"
               required
+              onChange={ (event) => changeAdress(event.target.value) }
             />
           </label>
           <label htmlFor="city">
@@ -60,6 +72,7 @@ class PersonalForm extends Component {
               placeholder="Insira sua Cidade"
               maxLength="28"
               required
+              onChange={ (event) => changeCity(event.target.value) }
             />
           </label>
           <label htmlFor="state">
@@ -71,11 +84,17 @@ class PersonalForm extends Component {
               placeholder="Insira sua Estado"
               maxLength="28"
               required
+              onChange={ (event) => changeDistrict(event.target.value) }
             />
           </label>
           <label htmlFor="home">
             Casa
-            <input type="radio" name="type" id="home" value="home" />
+            <input
+              type="radio"
+              name="type"
+              id="home"
+              value="home"
+            />
           </label>
           <label htmlFor="apto">
             Apartamento
