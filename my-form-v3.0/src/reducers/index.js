@@ -20,9 +20,9 @@ const changeReducer = (state = INITIAL_STATE, action) => {
       return {...state, adress: action.adress, }
     case 'CHANGE_CITY':
       return {...state, city: action.city, } 
-    case 'CHANGE_STATE':
+    case 'CHANGE_DISTRICT':
       return {...state, district: action.district, }
-    case 'CHANGE_TYPE':
+    case 'CHANGE_COMPLEMENT':
       return {...state, complement: action.complement, }  
     default:
       return state;

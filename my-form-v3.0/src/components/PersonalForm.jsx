@@ -1,4 +1,6 @@
 import { Component } from 'react';
+import { connect } from 'react-redux';
+import { changeCity, changeComplement, changeCpf, changeEmail, changeName, changeAdress, changeDistrict } from '../actions';
 
 class PersonalForm extends Component {
   render() {
@@ -86,4 +88,14 @@ class PersonalForm extends Component {
   
 }
 
-export default PersonalForm;
+const mapDispatchToProps = (dispatch) => ({
+  changeName: (name) => dispatch(changeName(name)), 
+  changeEmail: (email) => dispatch(changeEmail(email)), 
+  changeCpf: (cpf) => dispatch(changeCpf(cpf)), 
+  changeAdress: (adress) => dispatch(changeAdress(adress)), 
+  changeCity: (city) => dispatch(changeCity(city)), 
+  changeState: (district) => dispatch(changeDistrict(district)),
+  changeType: (complement) => dispatch(changeComplement(complement)),
+})
+
+export default connect(null, mapDispatchToProps)(PersonalForm);

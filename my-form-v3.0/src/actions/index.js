@@ -3,8 +3,8 @@ const CHANGE_EMAIL = 'CHANGE_EMAIL';
 const CHANGE_CPF = 'CHANGE_CPF';
 const CHANGE_ADRESS = 'CHANGE_ADRESS';
 const CHANGE_CITY = 'CHANGE_CITY';
-const CHANGE_STATE = 'CHANGE_STATE';
-const CHANGE_TYPE = 'CHANGE_TYPE';
+const CHANGE_DISTRICT = 'CHANGE_DISTRICT';
+const CHANGE_COMPLEMENT = 'CHANGE_COMPLEMENT';
 
 export function changeName(name) {
   return {
@@ -41,16 +41,16 @@ export function changeCity(city) {
   }
 }
 
-export function changeState(district) {
+export function changeDistrict(district) {
   return {
-    type: CHANGE_STATE,
+    type: CHANGE_DISTRICT,
     district,
   }
 }
 
-export function changeType(complement) {
+export function changeComplement(complement) {
   return {
-    type: CHANGE_TYPE,
+    type: CHANGE_COMPLEMENT,
     complement,
   }
 }
